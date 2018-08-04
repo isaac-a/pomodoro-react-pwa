@@ -24,6 +24,12 @@ class App extends Component {
 
   componentDidMount = () => {
     document.addEventListener('keydown', this.keyboardEvents);
+    const color = JSON.parse(localStorage.getItem('pomodoro-color'));
+    const background = JSON.parse(
+      localStorage.getItem('pomodoro-background')
+    );
+    document.documentElement.style.setProperty('--primary', background);
+    document.documentElement.style.setProperty('--secondary', color);
   };
 
   keyboardEvents = e => {

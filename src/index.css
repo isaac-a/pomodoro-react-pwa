@@ -1,5 +1,3 @@
-@import './media-queries.css';
-
 /* Variales ============================================== */
 :root {
   --primary: #212121;
@@ -76,6 +74,15 @@ h2 {
   height: 100%;
   top: 0;
   left: 0;
+}
+
+.menu-appear {
+  transform: translate3d(0, -100%, 0);
+}
+
+.menu-appear.menu-appear-active {
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s ease-in;
 }
 
 .menu-box {
@@ -186,4 +193,51 @@ h2 {
 
 .action-btn i:hover {
   color: var(--primary) !important;
+}
+
+/* Media Queries ========================================== */
+@media screen and (max-width: 1300px) {
+  .container {
+    max-width: 50%;
+    margin-top: 3em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .menu-box {
+    min-width: 35%;
+    left: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    max-width: 70%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .container {
+    max-width: 85%;
+    margin-top: 3.5em;
+  }
+
+  .menu {
+    padding: 0.8em 0.8em 1.5em 1.5em;
+  }
+
+  .timer.digits {
+    font-size: 3em !important;
+  }
+
+  .menu-box {
+    min-width: 65%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .menu-box {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
